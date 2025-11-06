@@ -37,28 +37,42 @@ export default function Overview() {
       <OverviewInfo>
         <OverviewTag>
           <Subtitle style={{ textTransform: "uppercase" }}>
-            Staking on Vexchange
+            Turtlelabs Takeover ;)
           </Subtitle>
         </OverviewTag>
-        <Title className="mt-3 w-100">Liquidity Mining Program</Title>
-        <OverviewDescription className="mt-3 w-100">
-          The program aims to incentivize VEX liquidity, expand the voting power
-          to those who miss out on the airdrop and to distribute the governance
-          token to those who have the most skin in the game.
-        </OverviewDescription>
-        <UnderlineLink
-          href="https://medium.com/@vexchange/vex-launch-information-9e14b9da4b64"
-          target="_blank"
-          rel="noreferrer noopener"
+
+        <Title className="mt-3 w-100">Liquidity Mining Claim Module</Title>
+
+        {/* Warning: do not create new stakes */}
+        <div
+          role="alert"
+          aria-live="assertive"
+          style={{
+            marginTop: "12px",
+            width: "100%",
+            padding: "12px 16px",
+            borderRadius: 8,
+            border: "1px solid #a40000",
+            background: "#ffe8e6",
+          }}
         >
-          <div className="d-flex mt-4">
-            <PrimaryText fontSize={14} className="mr-2">
-              Read more about the VEX token
-            </PrimaryText>
-            <ExternalIcon color="white" />
-          </div>
-        </UnderlineLink>
+          <PrimaryText style={{ fontWeight: 800, textTransform: "uppercase", color: "#a40000" }}>
+            DONT MAKE A NEW STAKE!
+          </PrimaryText>
+          <PrimaryText style={{ marginTop: 4, color: "#5c0000" }}>
+            This tool is intended <strong>solely</strong> to unwind existing positions on the sunset Vexchange platform.
+            New staking transactions are discouraged and not supported.
+          </PrimaryText>
+        </div>
+
+        <OverviewDescription className="mt-3 w-100">
+          As Vexchange is being sunset by the Vexchange team, TurtleLabs enables the community to withdraw
+          outstanding stakes in a controlled manner. Note: this application currently works <strong>only</strong> with
+          the <strong>Sync2 wallet</strong>. Functionality is provided on a best-effort basis; if you encounter issues,
+          please report them in the TurtleLabs Discord.
+        </OverviewDescription>
       </OverviewInfo>
+
       <OverviewKPIContainer>
         <OverviewKPI>
           <OverviewLabel>VEX Price</OverviewLabel>
@@ -67,7 +81,7 @@ export default function Overview() {
           </Title>
         </OverviewKPI>
         <OverviewKPI>
-          <OverviewLabel>USD Value Staked</OverviewLabel>
+          <OverviewLabel>Total Staked Value (USD)</OverviewLabel>
           <Title>
             {calculateTotalTvlUsd.gt(0)
               ? `$${formatAmount(utils.formatEther(calculateTotalTvlUsd))}`

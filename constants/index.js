@@ -17,6 +17,7 @@ export const CHAIN_ID = {
 
 export const VECHAIN_NODES = {
   mainnet: "https://mainnetc1.vechain.network/",
+  testnet: "https://vethor-node-test.vechaindev.com/", // toegevoegd voor robuuste fallback
 }
 
 /**
@@ -212,7 +213,7 @@ export const STAKING_POOLS = [
         name: "VEX",
         address: {
           mainnet: "0x0BD802635eb9cEB3fCBe60470D2857B86841aab6",
-          testnet: "0x7e46cAd7eB7ebc587ac36c30fE705eD77a686f60",
+          testnet: "0x7e46cAd7eB7ebc587ac36c30F e705eD77a686f60",
         },
       }
     ],
